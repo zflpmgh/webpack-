@@ -1,9 +1,14 @@
+import '../css/app.css'
 
-
-var btn=document.getElementById("btn");
-btn.onclick=function(){
-    import('./source.js').then(function(data){
-		alert(data.default)    //data.fefault是jsonp请求返回的数据，也就是source.js通过export default暴露的数据。
-})
-
+class People{   
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    sayhello(){
+        console.log(`你好，我叫${this.name}`)
+    }
 }
+
+var xm=new People('小明',18);
+xm.sayhello();
